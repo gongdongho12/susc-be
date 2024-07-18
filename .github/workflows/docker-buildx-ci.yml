@@ -30,4 +30,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: dongho1596/erica-be:latest
+          tags: dongho1596/susc-be:latest
