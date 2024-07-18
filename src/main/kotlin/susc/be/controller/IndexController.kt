@@ -1,4 +1,4 @@
-package erica.be.controller
+package susc.be.controller
 
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.GetMapping

@@ -1,11 +1,11 @@
-package erica.be
+package susc.be
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class EricaBeApplication
+class SuscBeApplication
 
 fun main(args: Array<String>) {
-	runApplication<EricaBeApplication>(*args)
+	runApplication<SuscBeApplication>(*args)
 }

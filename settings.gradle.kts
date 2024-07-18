@@ -1,1 +1,1 @@
-rootProject.name = "erica-be"
+rootProject.name = "susc-be"

@@ -1,4 +1,4 @@
-package erica.be.controller
+package susc.be.controller
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -8,10 +8,5 @@ class RestController {
     @GetMapping("/test")
     fun test(): String {
         return "test"
-    }
-
-    @GetMapping("/test2")
-    fun test2(): String {
-        return "test2"
     }
 }

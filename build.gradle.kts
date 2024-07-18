@@ -6,7 +6,6 @@ plugins {
     kotlin("jvm") version "1.9.20"
     kotlin("plugin.spring") version "1.9.20"
     kotlin("kapt") version "1.9.20"
-    id("com.netflix.dgs.codegen") version "5.2.0" apply true
 }
 
 group = "hackathon"
@@ -40,12 +39,6 @@ dependencies {
     implementation("io.springfox:springfox-boot-starter:${swaggerVersion}")
     kapt("org.springframework.boot:spring-boot-configuration-processor")
 
-    // DGS
-    implementation("com.graphql-java:graphql-java-extended-scalars")
-    implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:$dgsVersion"))
-    runtimeOnly("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter:$dgsVersion")
-    implementation("com.netflix.graphql.dgs:graphql-dgs-extended-scalars")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework:spring-webflux")
     testImplementation("org.springframework.graphql:spring-graphql-test")
@@ -68,16 +61,4 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
-}
-
-tasks.withType<com.netflix.graphql.dgs.codegen.gradle.GenerateJavaTask> {
-    schemaPaths = mutableListOf("${projectDir}/src/main/resources/schema/schema.graphqls")
-    generateDataTypes = true
-    snakeCaseConstantNames = true
-    language = "kotlin"
-    generateKotlinNullableClasses = false
-    typeMapping = mutableMapOf(
-        "DateTime" to "java.time.OffsetDateTime",
-        "Long" to "kotlin.Long",
-    )
 }

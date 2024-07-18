@@ -1,4 +1,4 @@
-package erica.be.configure
+package susc.be.configure
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -16,7 +16,7 @@ class SwaggerConfig {
         return Docket(DocumentationType.SWAGGER_2)
             .apiInfo(swaggerInfo())
             .select()
-            .apis(RequestHandlerSelectors.basePackage("erica.be"))
+            .apis(RequestHandlerSelectors.basePackage("susc.be"))
             .paths(PathSelectors.any())
             .build()
             .useDefaultResponseMessages(false)
@@ -24,8 +24,8 @@ class SwaggerConfig {
 
     private fun swaggerInfo(): ApiInfo {
         return ApiInfoBuilder()
-            .title("Erica API Documentation")
-            .description("Erica 서버 API 문서입니다.")
+            .title("SUSC API Documentation")
+            .description("SUSC 서버 API 문서입니다.")
             .version("1.0.0")
             .build()
     }
